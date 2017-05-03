@@ -10,7 +10,8 @@ readonly OPTION_TWO="Dentries and inodes"
 readonly OPTION_THREE="PageCache, dentries and inodes"
 readonly OPTION_FOUR="Swap"
 
-CHOICE=$(zenity --height 256 --title "${TITLE}" --text "${DESCRIPTION}" --list --radiolist \
+# zenity GUI
+readonly CHOICE=$(zenity --height 256 --title "${TITLE}" --text "${DESCRIPTION}" --list --radiolist \
   --column "Option" --column "Clear" \
   1 "${OPTION_ONE}" 2 "${OPTION_TWO}" 3 "${OPTION_THREE}" 4 "${OPTION_FOUR}")
 
