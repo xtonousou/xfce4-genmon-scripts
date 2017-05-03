@@ -154,13 +154,20 @@ MORE_INFO+="├─ Energy: ${ENERGY} Wh\n"
 MORE_INFO+="├─ Energy when full: ${ENERGY_FULL} Wh\n"
 MORE_INFO+="├─ Energy (design): ${ENERGY_DESIGN} Wh\n"
 MORE_INFO+="├─ Rate: ${RATE} W\n"
-MORE_INFO+="├─ Voltage: ${VOLTAGE} V\n"
 if acpi -a | grep -i "off-line" &> /dev/null; then # if AC adapter is offline
-  MORE_INFO+="└─ Remaining Time: ${TIME_UNTIL}"
+  if [ "${BATTERY}" -eq 100 ]; then # if battery is fully charged
+    MORE_INFO+="└─ Voltage: ${VOLTAGE} V"
+  else
+    MORE_INFO+="└─ Remaining Time: ${TIME_UNTIL}"
+  fi
 elif acpi -a | grep -i "on-line" &> /dev/null; then # if AC adapter is online
-  MORE_INFO+="└─ Time to fully charge: ${TIME_UNTIL}"
+  if [ "${BATTERY}" -eq 100 ]; then # if battery is fully charged
+    MORE_INFO+="└─ Voltage: ${VOLTAGE} V"
+  else
+    MORE_INFO+="└─ Time to fully charge: ${TIME_UNTIL}"
+  fi
 else # if battery is in unknown state (no battery at all, throttling, etc.)
-  MORE_INFO+="└─ Time: UNKNOWN"
+  MORE_INFO+="└─ Voltage: ${VOLTAGE} V"
 fi
 MORE_INFO+="</tool>"
 
