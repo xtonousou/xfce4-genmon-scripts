@@ -6,7 +6,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Optional icon to display before the text
 # Insert the absolute path of the icon
 # Recommended size is 24x24 px
-ICON="${DIR}/icons/memory.png"
+ICON="${DIR}/icons/memory/memory.png"
 
 # Optional script to run on icon click
 # Insert the absolute path of the script
@@ -36,7 +36,7 @@ else
   INFO="<txt>"
 fi
 INFO+="${USED}"
-INFO+=" "
+INFO+=" / "
 INFO+="${TOTAL}"
 INFO+="</txt>"
 
@@ -47,12 +47,12 @@ MORE_INFO+="├─ Used\t\t${USED}\n"
 MORE_INFO+="├─ Free\t\t${FREE}\n"
 MORE_INFO+="├─ Shared\t${SHARED}\n"
 MORE_INFO+="├─ Cache\t${CACHE}\n"
-MORE_INFO+="└─ Total\t\t${TOTAL}\n"
-MORE_INFO+="\n"
+MORE_INFO+="└─ Total\t\t${TOTAL}"
+MORE_INFO+="\n\n"
 MORE_INFO+="┌ SWAP\n"
 MORE_INFO+="├─ Used\t\t${SWP_USED}\n"
 MORE_INFO+="├─ Free\t\t${SWP_FREE}\n"
-MORE_INFO+="└─ Total\t\t${SWP_TOTAL}\n"
+MORE_INFO+="└─ Total\t\t${SWP_TOTAL}"
 MORE_INFO+="</tool>"
 
 # Panel Print

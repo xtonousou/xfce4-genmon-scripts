@@ -6,10 +6,10 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Optional icon to display before the text
 # Insert the absolute path of the icon
 # Recommended size is 24x24 px
-readonly ICON="${DIR}/icons/chart-bar.png"
+readonly ICON="${DIR}/icons/cpu/chart-bar.png"
 
 declare -a CPU_ARRAY=($(awk '/MHz/{print $4}' /proc/cpuinfo | cut -f1 -d"."))
-NUM_OF_CPUS="${#CPU_ARRAY[@]}"
+readonly NUM_OF_CPUS="${#CPU_ARRAY[@]}"
 
 #CPU0=$(awk '/MHz/{print $4}' /proc/cpuinfo | cut -f1 -d"." | sed -n 1p)
 
@@ -19,7 +19,7 @@ MORE_INFO+="┌ $(grep "model name" /proc/cpuinfo | cut -f2 -d ":" | sed -n 1p |
 STEP=0
 for CPU in "${CPU_ARRAY[@]}"; do
   STDOUT=$(( STDOUT + CPU ))
-  MORE_INFO+="├─ CPU ${STEP}: ${CPU}\n"
+  MORE_INFO+="├─ CPU ${STEP}: ${CPU} MHz\n"
   let STEP+=1
 done
 MORE_INFO+="└─ Temperature: $(sensors | awk '/[Pp]ackage/{print $4}')"
