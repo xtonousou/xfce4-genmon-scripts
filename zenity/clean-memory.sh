@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Dependencies: gksu, util-linux, procps-ng, zenity
 
 readonly TITLE="Clean Memory"
 readonly TITLE_="Confirmation Message"
@@ -14,22 +15,20 @@ CHOICE=$(zenity --height 256 --title "${TITLE}" --text "${DESCRIPTION}" --list -
   1 "${OPTION_ONE}" 2 "${OPTION_TWO}" 3 "${OPTION_THREE}" 4 "${OPTION_FOUR}")
 
 case "${CHOICE}" in
-    "${OPTION_ONE}")
-      gksu "sysctl vm.drop_caches=1"
-    ;;
-    "${OPTION_TWO}")
-      gksu "sysctl vm.drop_caches=2"
-    ;;
-    "${OPTION_THREE}")
-      zenity --width 192 --question --title "${TITLE_}" --text "${DESCRIPTION_}"
-      if [[ "${?}" -eq 0 ]]; then
-        gksu "sysctl vm.drop_caches=3"
-      fi
-    ;;
-    "${OPTION_FOUR}")
-      zenity --width 192 --question --title "${TITLE_}" --text "${DESCRIPTION_}"
-      if [[ "${?}" -eq 0 ]]; then
-        gksu "swapoff --all && swapon --all"
-      fi
-    ;;
+  "${OPTION_ONE}")
+    gksu "sysctl vm.drop_caches=1"
+  ;;
+  "${OPTION_TWO}")
+    gksu "sysctl vm.drop_caches=2"
+  ;;
+  "${OPTION_THREE}")
+    if zenity --width 192 --question --title "${TITLE_}" --text "${DESCRIPTION_}"; then
+      gksu "sysctl vm.drop_caches=3"
+    fi
+  ;;
+  "${OPTION_FOUR}")
+    if zenity --width 192 --question --title "${TITLE_}" --text "${DESCRIPTION_}"; then
+      gksu "swapoff --all && swapon --all"
+    fi
+  ;;
 esac
