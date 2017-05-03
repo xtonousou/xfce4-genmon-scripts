@@ -18,7 +18,7 @@ declare -ra ICON_ARRAY=(
   "${DIR}/icons/battery/battery-80.png"           # 80%
   "${DIR}/icons/battery/battery-90.png"           # 90%
   "${DIR}/icons/battery/battery.png"              # 100%
-  "${DIR}/icons/battery/battery-alert.png"        # unknown error
+  "${DIR}/icons/battery/battery-unknown.png"      # unknown error
   "${DIR}/icons/battery/battery-charging.png"     # battery charging, any percentage except 100%
   "${DIR}/icons/battery/battery-charging-100.png" # battery charging, 100%
 )
