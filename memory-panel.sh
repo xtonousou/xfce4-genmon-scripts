@@ -26,7 +26,7 @@ readonly SWP_USED=$(free -m | awk '/[Ss]wap/{print $3}' | awk '{$1 = $1 / 1024; 
 readonly SWP_FREE=$(free -m | awk '/[Ss]wap/{print $4}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
 
 # Panel
-if [ -f "${ICON}" ]; then
+if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
   INFO="<img>${ICON}</img>"
   if [ -f "${ONCLICK}" ]; then
     INFO+="<click>${ONCLICK}</click>"

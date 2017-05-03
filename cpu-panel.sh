@@ -26,7 +26,7 @@ STDOUT=$(( STDOUT / NUM_OF_CPUS ))
 STDOUT=$(awk '{$1 = $1 / 1024; printf "%.2f%s", $1, " GHz"}' <<< "${STDOUT}")
 
 # Panel
-if [ -f "${ICON}" ]; then
+if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
   INFO="<img>${ICON}</img>"
   INFO+="<txt>"
 else
