@@ -61,7 +61,7 @@ if acpi -a | grep -i "off-line" &> /dev/null; then # if AC adapter is offline
       INFO="<img>${ICON_ARRAY[3]}</img>"
     fi
   elif [ "${BATTERY}" -ge 30 ] && [ "${BATTERY}" -lt 40 ]; then # if battery is >= 30% and < 40%
-    if [[ $(file -b "${ICON_ARRAY[3]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
+    if [[ $(file -b "${ICON_ARRAY[4]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[4]}</img>"
     fi
   elif [ "${BATTERY}" -ge 40 ] && [ "${BATTERY}" -lt 50 ]; then # if battery is >= 40% and < 50%
@@ -94,27 +94,27 @@ if acpi -a | grep -i "off-line" &> /dev/null; then # if AC adapter is offline
     fi
   fi
 elif acpi -a | grep -i "on-line" &> /dev/null; then # if AC adapter is online
-  if [ "${BATTERY}" -lt 20 ]; then # if battery is less than 20%
+  if [ "${BATTERY}" -lt 15 ]; then # if battery is less than 15%
     if [[ $(file -b "${ICON_ARRAY[12]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[12]}</img>"
     fi
-  elif [ "${BATTERY}" -ge 20 ] && [ "${BATTERY}" -lt 30 ]; then # if battery is >= 20% and < 30%
+  elif [ "${BATTERY}" -ge 15 ] && [ "${BATTERY}" -lt 30 ]; then # if battery is >= 15% and < 30%
     if [[ $(file -b "${ICON_ARRAY[13]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[13]}</img>"
     fi
-  elif [ "${BATTERY}" -ge 40 ] && [ "${BATTERY}" -lt 60 ]; then # if battery is >= 40% and < 60%
+  elif [ "${BATTERY}" -ge 30 ] && [ "${BATTERY}" -lt 55 ]; then # if battery is >= 30% and < 55%
     if [[ $(file -b "${ICON_ARRAY[14]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[14]}</img>"
     fi
-  elif [ "${BATTERY}" -ge 60 ] && [ "${BATTERY}" -lt 80 ]; then # if battery is >= 60% and < 80%
+  elif [ "${BATTERY}" -ge 55 ] && [ "${BATTERY}" -lt 70 ]; then # if battery is >= 55% and < 70%
     if [[ $(file -b "${ICON_ARRAY[15]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[15]}</img>"
     fi
-  elif [ "${BATTERY}" -ge 80 ] && [ "${BATTERY}" -lt 90 ]; then # if battery is >= 80% and < 90%
+  elif [ "${BATTERY}" -ge 70 ] && [ "${BATTERY}" -lt 85 ]; then # if battery is >= 60% and < 85%
     if [[ $(file -b "${ICON_ARRAY[16]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[16]}</img>"
     fi
-  elif [ "${BATTERY}" -ge 90 ] && [ "${BATTERY}" -lt 100 ]; then # if battery is >= 90% and < 100%
+  elif [ "${BATTERY}" -ge 85 ] && [ "${BATTERY}" -lt 100 ]; then # if battery is >= 85% and < 100%
     if [[ $(file -b "${ICON_ARRAY[17]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
       INFO="<img>${ICON_ARRAY[17]}</img>"
     fi
