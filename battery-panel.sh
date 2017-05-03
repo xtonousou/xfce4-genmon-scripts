@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Dependencies: acpi, bash>=3.2, coreutils, file, gawk, grep
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
