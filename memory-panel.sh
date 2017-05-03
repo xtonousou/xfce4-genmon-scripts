@@ -12,14 +12,14 @@ readonly ICON="${DIR}/icons/memory/memory.png"
 # Optional script to run on icon click
 # Insert the absolute path of the script
 # Must set the icon first
-readonly ONCLICK="${DIR}/zenity/clean-memory.sh"
+#readonly ONCLICK="${DIR}/zenity/clean-memory.sh"
 
 # RAM Values
-readonly TOTAL=$(free -m | awk '/[Mm]em/{print $2}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
-readonly USED=$(free -m | awk '/[Mm]em/{print $3}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
-readonly FREE=$(free -m | awk '/[Mm]em/{print $4}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
+readonly TOTAL=$(awk '/MemTotal/{$2 = $2 / 1024000; printf "%.2f", $2}' /proc/meminfo)
+readonly FREE=$(awk '/MemFree/{$2 = $2 / 1024000; printf "%.2f", $2}' /proc/meminfo)
 readonly SHARED=$(free -m | awk '/[Mm]em/{print $5}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
 readonly CACHE=$(free -m | awk '/[Mm]em/{print $6}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
+readonly USED=$(free -m | awk '/[Mm]em/{print $3}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
 
 # Swap Values
 readonly SWP_TOTAL=$(free -m | awk '/[Ss]wap/{print $2}' | awk '{$1 = $1 / 1024; printf "%.2f", $1}')
@@ -29,8 +29,8 @@ readonly SWP_FREE=$(free -m | awk '/[Ss]wap/{print $4}' | awk '{$1 = $1 / 1024; 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
   INFO="<img>${ICON}</img>"
-  if [ -f "${ONCLICK}" ]; then
-    INFO+="<click>${ONCLICK}</click>"
+  if hash xfce4-taskmanager &> /dev/null; then
+    INFO+="<click>xfce4-taskmanager</click>"
   fi
   INFO+="<txt>"
 else

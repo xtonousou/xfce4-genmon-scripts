@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: gksu, util-linux, procps-ng, zenity
+# Dependencies: coreutils, gksu, util-linux, procps-ng, zenity
 
 readonly TITLE="Clean Memory"
 readonly TITLE_="Confirmation Message"

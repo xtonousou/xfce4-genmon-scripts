@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: acpi, bash>=3.2, coreutils, file, gawk, grep
+# Dependencies: acpi, bash>=3.2, coreutils, file, gawk, grep, xfce4-power-manager
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -46,6 +46,7 @@ readonly TIME_UNTIL=$(acpi | awk '{print $5}')
 
 # Panel
 # Proper icon handling
+INFO=
 if acpi -a | grep -i "off-line" &> /dev/null; then # if AC adapter is offline
   if [ "${BATTERY}" -lt 10 ]; then # if battery is less than 10%
     if [[ $(file -b "${ICON_ARRAY[1]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
@@ -126,6 +127,10 @@ else # if battery is in unknown state (no battery at all, throttling, etc.)
   if [[ $(file -b "${ICON_ARRAY[0]}") =~ PNG|SVG ]]; then # check if the icon exists and it is a .png or .svg image
     INFO="<img>${ICON_ARRAY[0]}</img>"
   fi
+fi
+
+if hash xfce4-power-manager-settings &> /dev/null; then
+  INFO+="<click>xfce4-power-manager-settings</click>"
 fi
 
 INFO+="<txt>"
