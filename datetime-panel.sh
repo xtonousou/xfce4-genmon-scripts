@@ -7,7 +7,11 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Optional icon to display before the text
 # Insert the absolute path of the icon
 # Recommended size is 24x24 px
-readonly ICON="${DIR}/icons/datetime/clock.png"
+if [ "$(date +%d%m)" -eq 2604 ]; then # birthday, 2604 stands for April 26
+  readonly ICON="${DIR}/icons/datetime/cake-variant.png"
+else
+  readonly ICON="${DIR}/icons/datetime/clock.png"
+fi
 
 readonly TIME=$(date +%T)
 readonly DATE=$(date)
