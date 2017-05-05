@@ -9,7 +9,9 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Recommended size is 24x24 px
 if [ "$(date +%d%m)" -eq 2604 ]; then # birthday, 2604 stands for April 26
   readonly ICON="${DIR}/icons/datetime/cake-variant.png"
-elif [ "$(date +%H%M)" -eq 0420 ] || [ "$(date +%H%M)" -eq 1620 ]; then # heyy that's pretty good
+elif [ "$(date +%H%M)" -eq 0420 ] \
+  || [ "$(date +%H%M)" -eq 1620 ] \
+  || [ "$(date +%d%m)" -eq 2004 ]; then # heyy that's pretty good
   readonly ICON="${DIR}/icons/datetime/weed.png"
 else
   readonly ICON="${DIR}/icons/datetime/clock.png"

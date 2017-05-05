@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: bash>=3.2, coreutils, file, grep, pacman, yaourt
+# Dependencies: bash>=3.2, coreutils, file, grep, iputils, pacman, yaourt
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -9,9 +9,16 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Recommended size is 24x24 px
 readonly ICON="${DIR}/icons/others/pacman.png"
 
-readonly AUR=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
-readonly OFFICIAL=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
-readonly ALL=$(( AUR + OFFICIAL ))
+# Check if network connection exists and then calculate the updates
+if ping -c 1 "8.8.8.8" &> /dev/null; then
+  readonly AUR=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
+  readonly OFFICIAL=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
+  readonly ALL=$(( AUR + OFFICIAL ))
+elif ! ping -c 1 "8.8.8.8" &> /dev/null; then
+  readonly AUR="offline"
+  readonly OFFICIAL="offline"
+  readonly ALL="offline"
+fi
 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
@@ -20,7 +27,7 @@ if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
 else
   INFO="<txt>"
 fi
-INFO+="${ALL} updates"
+INFO+="${ALL}"
 INFO+="</txt>"
 
 # Tooltip
