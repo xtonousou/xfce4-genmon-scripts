@@ -10,15 +10,9 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly ICON="${DIR}/icons/others/pacman.png"
 
 # Check if network connection exists and then calculate the updates
-if ping -c 1 "8.8.8.8" &> /dev/null; then
-  readonly AUR=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
-  readonly OFFICIAL=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
-  readonly ALL=$(( AUR + OFFICIAL ))
-elif ! ping -c 1 "8.8.8.8" &> /dev/null; then
-  readonly AUR="offline"
-  readonly OFFICIAL="offline"
-  readonly ALL="offline"
-fi
+readonly AUR=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
+readonly OFFICIAL=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
+readonly ALL=$(( AUR + OFFICIAL ))
 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
