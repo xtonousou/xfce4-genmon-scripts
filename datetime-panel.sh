@@ -17,8 +17,9 @@ else
   readonly ICON="${DIR}/icons/datetime/clock.png"
 fi
 
+# Calculate datetime values
 readonly TIME=$(LC_ALL=en_US.UTF-8 date +%T)
-readonly DATE=$(LC_ALL=en_US.UTF-8 date)
+readonly DATE=$(LC_ALL=en_US.UTF-8 date +%A\ %d\ %B\ %Y)
 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
