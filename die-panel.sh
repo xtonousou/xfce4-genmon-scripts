@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: bash>=3.2, coreutils, file, grep, iputils, pacman, yaourt
+# Dependencies: bash>=3.2, coreutils, file
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

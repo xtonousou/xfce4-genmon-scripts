@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: bash>=3.2, coreutils, file, xfce4-session
+# Dependencies: bash>=3.2, coreutils, file
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -8,9 +8,8 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Insert the absolute path of the icon
 # Recommended size is 24x24 px
 readonly ICON="${DIR}/icons/others/linux.png"
-# Uncomment the below and comment out the above if you prefer the apple logo instead
-#readonly ICON="${DIR}/icons/power/apple.png"
 
+# Kernel values
 readonly KERNEL=$(uname -r)
 readonly UNAME=$(uname -a)
 
