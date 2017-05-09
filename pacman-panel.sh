@@ -9,7 +9,7 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Recommended size is 24x24 px
 readonly ICON="${DIR}/icons/others/pacman.png"
 
-# Check if network connection exists and then calculate the updates
+# Calculate updates
 readonly AUR=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
 readonly OFFICIAL=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
 readonly ALL=$(( AUR + OFFICIAL ))
@@ -20,6 +20,7 @@ if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
   INFO+="<txt>"
 else
   INFO="<txt>"
+  INFO+="Icon is missing!"
 fi
 INFO+="${ALL}"
 INFO+="</txt>"
