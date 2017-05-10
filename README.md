@@ -4,33 +4,33 @@
 
 #### Features
 
-| Filename          | Preview     | Tooltip Preview      | On Click Action                 |
-|------------------:|------------:|:---------------------|:--------------------------------|
-| battery-panel.sh  | ![battery]  | [battery-tooltip]    | [battery-gui]                   |
-| cleaner-panel.sh  | ![cleaner]  |                      | [cleaner-gui] [cleaner-gui-2]   |
-| cpu-panel.sh      | ![cpu]      | [cpu-tooltip]        | [cpu-gui]                       |
-| datetime-panel.sh | ![datetime] | [datetime-tooltip]   |                                 |
-| die-panel.sh      | ![die]      |                      |                                 |
-| eject-panel.sh    | ![eject]    |                      | [eject-gui]                     |
-| kernel-panel.sh   | ![kernel]   | [kernel-tooltip]     |                                 |
-| memory-panel.sh   | ![memory]   | [memory-tooltip]     | [memory-gui]                    |
-| pacman-panel.sh   | ![pacman]   | [pacman-tooltip]     |                                 |
-| power-panel.sh    | ![power]    |                      | [power-gui]                     |
+| Filename          | Preview     | Tooltip Preview    | On Click Action               |
+|------------------:|------------:|:-------------------|:------------------------------|
+| battery-panel.sh  | ![battery]  | [battery-tooltip]  | [battery-gui]                 |
+| cleaner-panel.sh  | ![cleaner]  |                    | [cleaner-gui] [cleaner-gui-2] |
+| cpu-panel.sh      | ![cpu]      | [cpu-tooltip]      | [cpu-gui]                     |
+| datetime-panel.sh | ![datetime] | [datetime-tooltip] |                               |
+| die-panel.sh      | ![die]      |                    |                               |
+| eject-panel.sh    | ![eject]    |                    | [eject-gui]                   |
+| kernel-panel.sh   | ![kernel]   | [kernel-tooltip]   |                               |
+| memory-panel.sh   | ![memory]   | [memory-tooltip]   | [memory-gui]                  |
+| pacman-panel.sh   | ![pacman]   | [pacman-tooltip]   |                               |
+| power-panel.sh    | ![power]    |                    | [power-gui]                   |
 
 ##### Recommended Properties
 
-| Recommended Command        | Recommended Font          | Recommended Period(s) |
-|---------------------------:|:-------------------------:|:----------------------|
-| /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**             |
-| /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**             |
-| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**             |
-| /path/to/datetime-panel.sh | **xos4 Terminus Bold 18** |  **1.00**             |
-| /path/to/die-panel.sh      | **xos4 Terminus Bold 18** |  **2.75**             |
-| /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**             |
-| /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**             |
-| /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**             |
-| /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**             |
-| /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**             |
+| Recommended Command        | Recommended Font          | Recommended Period (s) |
+|---------------------------:|:-------------------------:|:-----------------------|
+| /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**              |
+| /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**              |
+| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**              |
+| /path/to/datetime-panel.sh | **xos4 Terminus Bold 18** |  **1.00**              |
+| /path/to/die-panel.sh      | **xos4 Terminus Bold 18** |  **2.75**              |
+| /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**              |
+| /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**              |
+| /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**              |
+| /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**              |
+| /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**              |
 
 #### Compatibility
 
