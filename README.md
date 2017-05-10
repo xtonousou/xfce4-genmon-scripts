@@ -34,7 +34,7 @@
 
 #### Compatibility
 
-You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements are mentioned in each script.
+You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements are mentioned inside the scripts.
 
 #### License
 
