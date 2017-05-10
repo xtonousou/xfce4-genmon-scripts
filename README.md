@@ -5,7 +5,7 @@
 #### Features
 
 | Filename          | Preview     | Tooltip Preview    | On Click Action               |
-|------------------:|------------:|:-------------------|:------------------------------|
+|:-----------------:|:-----------:|:------------------:|:-----------------------------:|
 | battery-panel.sh  | ![battery]  | [battery-tooltip]  | [battery-gui]                 |
 | cleaner-panel.sh  | ![cleaner]  |                    | [cleaner-gui] [cleaner-gui-2] |
 | cpu-panel.sh      | ![cpu]      | [cpu-tooltip]      | [cpu-gui]                     |
@@ -20,7 +20,7 @@
 ##### Recommended Properties
 
 | Command                    | Font                      | Period (s) |
-|---------------------------:|:-------------------------:|:-----------|
+|---------------------------:|:-------------------------:|:----------:|
 | /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**  |
 | /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**  |
