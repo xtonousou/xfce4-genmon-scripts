@@ -19,18 +19,18 @@
 
 ##### Recommended Properties
 
-| Recommended Command        | Recommended Font          | Recommended Period (s) |
-|---------------------------:|:-------------------------:|:-----------------------|
-| /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**              |
-| /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**              |
-| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**              |
-| /path/to/datetime-panel.sh | **xos4 Terminus Bold 18** |  **1.00**              |
-| /path/to/die-panel.sh      | **xos4 Terminus Bold 18** |  **2.75**              |
-| /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**              |
-| /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**              |
-| /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**              |
-| /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**              |
-| /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**              |
+| Command                    | Font                      | Period (s) |
+|---------------------------:|:-------------------------:|:-----------|
+| /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**  |
+| /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**  |
+| /path/to/datetime-panel.sh | **xos4 Terminus Bold 18** |  **1.00**  |
+| /path/to/die-panel.sh      | **xos4 Terminus Bold 18** |  **2.75**  |
+| /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**  |
+| /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
 
 #### Compatibility
 
