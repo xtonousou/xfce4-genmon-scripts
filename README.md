@@ -1,5 +1,7 @@
 ### xfce4-genmon-scripts
 
+![preview-panel]
+
 > Beautify your XFCE panel by addding these awesome scripts in xfce4-genmon-plugin wrappers.
 
 #### Features
@@ -18,6 +20,8 @@
 | power-panel.sh    | ![power]    |                    | [power-gui]                   |
 
 ##### Recommended Properties
+
+To get started, you need a horizontal xfce4-panel with **28%** length (recommended, suits better).
 
 | Command                    | Font                      | Period (s) |
 |---------------------------:|:-------------------------:|:----------:|
@@ -40,6 +44,7 @@ You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements a
 
 This project is licensed under GPL(v3) or later.
 
+[preview-panel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/preview-panel.png "xfce4-panel"
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery.gif "battery"
 [battery-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-tooltip.gif "battery-tooltip"
 [battery-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-gui.png "battery-gui"
