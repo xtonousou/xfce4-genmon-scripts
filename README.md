@@ -15,7 +15,7 @@
 
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/battery-panel/battery.gif "battery"
 [battery-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/battery-panel/battery-tooltip.gif "battery-tooltip"
-[cleaner]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/cleaner-panel/cleaner.gif "cleaner"
+[cleaner]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/cleaner-panel/cleaner.png "cleaner"
 [cleaner-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/cleaner-panel/cleaner-gui.png "cleaner-gui"
 [cleaner-gui-2]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/cleaner-panel/cleaner-gui-2.png "cleaner-gui-2"
 [cpu]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/cpu-panel/cpu.gif "cpu"
