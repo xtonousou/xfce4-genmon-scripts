@@ -3,7 +3,7 @@
 | Filename          | Preview     |
 |------------------:|:------------|
 | battery-panel.sh  | ![battery]  |
-| cleaner-panel.sh  | ![[cleaner] |
+| cleaner-panel.sh  | ![cleaner]  |
 | cpu-panel.sh      | ![cpu]      |
 | datetime-panel.sh | ![datetime] |
 | die-panel.sh      | ![die]      |
