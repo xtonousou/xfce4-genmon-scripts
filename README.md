@@ -1,17 +1,17 @@
 ### xfce4-genmon-scripts ![Whee!](https://i.stack.imgur.com/VEeSx.gif)
 
-| Filename          | Preview     |
-|------------------:|:------------|
-| battery-panel.sh  | ![battery]  |
-| cleaner-panel.sh  | ![cleaner]  |
-| cpu-panel.sh      | ![cpu]      |
-| datetime-panel.sh | ![datetime] |
-| die-panel.sh      | ![die]      |
-| eject-panel.sh    | ![eject]    |
-| kernel-panel.sh   | ![kernel]   |
-| memory-panel.sh   | ![memory]   |
-| pacman-panel.sh   | ![pacman]   |
-| power-panel.sh    | ![power]    |
+| Filename          | Preview     | Tooltip Preview     | GUI Preview                     |
+|------------------:|------------:|:--------------------|:--------------------------------|
+| battery-panel.sh  | ![battery]  | ![battery-tooltip]  |                                 |
+| cleaner-panel.sh  | ![cleaner]  |                     | ![cleaner-gui] ![cleaner-gui-2] |
+| cpu-panel.sh      | ![cpu]      | ![cpu-tooltip]      |                                 |
+| datetime-panel.sh | ![datetime] | ![datetime-tooltip] |                                 |
+| die-panel.sh      | ![die]      |                     |                                 |
+| eject-panel.sh    | ![eject]    |                     | ![eject-gui]                    |
+| kernel-panel.sh   | ![kernel]   | ![kernel-tooltip]   |                                 |
+| memory-panel.sh   | ![memory]   | ![memory-tooltip]   |                                 |
+| pacman-panel.sh   | ![pacman]   | ![pacman-tooltip]   |                                 |
+| power-panel.sh    | ![power]    |                     |                                 |
 
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/battery-panel/battery.gif "battery"
 [battery-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/battery-panel/battery-tooltip.gif "battery-tooltip"
@@ -28,6 +28,7 @@
 [kernel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/kernel-panel/kernel.png "kernel"
 [kernel-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/kernel-panel/kernel-tooltip.png "kernel-tooltip"
 [memory]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/memory-panel/memory.gif "memory"
+[memory-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/memory-panel/memory-tooltip.gif "memory-tooltip"
 [pacman]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/pacman-panel/pacman.png "pacman"
 [pacman-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
 [power]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/power-panel/power.png "power"
