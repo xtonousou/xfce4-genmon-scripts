@@ -2,15 +2,15 @@
 
 | Filename          | Preview     | Tooltip Preview     | GUI Preview                     |
 |------------------:|------------:|:--------------------|:--------------------------------|
-| battery-panel.sh  | ![battery]  | ![battery-tooltip]  |                                 |
-| cleaner-panel.sh  | ![cleaner]  |                     | ![cleaner-gui] ![cleaner-gui-2] |
-| cpu-panel.sh      | ![cpu]      | ![cpu-tooltip]      |                                 |
-| datetime-panel.sh | ![datetime] | ![datetime-tooltip] |                                 |
+| battery-panel.sh  | ![battery]  |  [battery-tooltip]  |                                 |
+| cleaner-panel.sh  | ![cleaner]  |                     | [cleaner-gui] [cleaner-gui-2]   |
+| cpu-panel.sh      | ![cpu]      |  [cpu-tooltip]      |                                 |
+| datetime-panel.sh | ![datetime] |  [datetime-tooltip] |                                 |
 | die-panel.sh      | ![die]      |                     |                                 |
-| eject-panel.sh    | ![eject]    |                     | ![eject-gui]                    |
-| kernel-panel.sh   | ![kernel]   | ![kernel-tooltip]   |                                 |
-| memory-panel.sh   | ![memory]   | ![memory-tooltip]   |                                 |
-| pacman-panel.sh   | ![pacman]   | ![pacman-tooltip]   |                                 |
+| eject-panel.sh    | ![eject]    |                     | [eject-gui]                     |
+| kernel-panel.sh   | ![kernel]   |  [kernel-tooltip]   |                                 |
+| memory-panel.sh   | ![memory]   |  [memory-tooltip]   |                                 |
+| pacman-panel.sh   | ![pacman]   |  [pacman-tooltip]   |                                 |
 | power-panel.sh    | ![power]    |                     |                                 |
 
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/battery-panel/battery.gif "battery"
