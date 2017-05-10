@@ -10,7 +10,7 @@
 | eject-panel.sh    | ![eject]    |
 | kernel-panel.sh   | ![kernel]   |
 | memory-panel.sh   | ![memory]   |
-| pacman-panel.sh   | ![kernel]   |
+| pacman-panel.sh   | ![pacman]   |
 | power-panel.sh    | ![power]    |
 
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/test/previews/battery-panel/battery.gif "battery"
