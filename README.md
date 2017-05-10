@@ -2,7 +2,6 @@
 
 | Filename          | Preview |
 |------------------:|:--------|
-|                   |         |
 | battery-panel.sh  | link    |
 | cleaner-panel.sh  | link    |
 | clean.sh          | link    |
