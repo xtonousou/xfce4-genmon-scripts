@@ -6,22 +6,22 @@
 
 #### Features
 
-| Filename          | Preview     | Tooltip Preview    | On Click Action               |
-|:-----------------:|:-----------:|:------------------:|:-----------------------------:|
-| battery-panel.sh  | ![battery]  | [battery-tooltip]  | [battery-gui]                 |
-| cleaner-panel.sh  | ![cleaner]  |                    | [cleaner-gui] [cleaner-gui-2] |
-| cpu-panel.sh      | ![cpu]      | [cpu-tooltip]      | [cpu-gui]                     |
-| datetime-panel.sh | ![datetime] | [datetime-tooltip] |                               |
-| die-panel.sh      | ![die]      |                    |                               |
-| eject-panel.sh    | ![eject]    |                    | [eject-gui]                   |
-| kernel-panel.sh   | ![kernel]   | [kernel-tooltip]   |                               |
-| memory-panel.sh   | ![memory]   | [memory-tooltip]   | [memory-gui]                  |
-| pacman-panel.sh   | ![pacman]   | [pacman-tooltip]   |                               |
-| power-panel.sh    | ![power]    |                    | [power-gui]                   |
+| Filename            | Preview     | Tooltip Preview    | On Click Action               |
+|:-------------------:|:-----------:|:------------------:|:-----------------------------:|
+| [battery-panel.sh]  | ![battery]  | [battery-tooltip]  | [battery-gui]                 |
+| [cleaner-panel.sh]  | ![cleaner]  |                    | [cleaner-gui] [cleaner-gui-2] |
+| [cpu-panel.sh]      | ![cpu]      | [cpu-tooltip]      | [cpu-gui]                     |
+| [datetime-panel.sh] | ![datetime] | [datetime-tooltip] |                               |
+| [die-panel.sh]      | ![die]      |                    |                               |
+| [eject-panel.sh]    | ![eject]    |                    | [eject-gui]                   |
+| [kernel-panel.sh]   | ![kernel]   | [kernel-tooltip]   |                               |
+| [memory-panel.sh]   | ![memory]   | [memory-tooltip]   | [memory-gui]                  |
+| [pacman-panel.sh]   | ![pacman]   | [pacman-tooltip]   |                               |
+| [power-panel.sh]    | ![power]    |                    | [power-gui]                   |
 
 ##### Recommended Properties
 
-To get started, you need a horizontal xfce4-panel with **28%** length (recommended, suits better).
+To get started, you need a horizontal xfce4-panel with **28p** row size and **100%** length (recommended, suits better).
 
 | Command                    | Font                      | Period (s) |
 |---------------------------:|:-------------------------:|:----------:|
@@ -33,6 +33,7 @@ To get started, you need a horizontal xfce4-panel with **28%** length (recommend
 | /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**  |
+| /path/to/network-panel.sh  | **xos4 Terminus Bold 18** |  **2.75**  |
 | /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
 
@@ -44,6 +45,16 @@ You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements a
 
 This project is licensed under GPL(v3) or later.
 
+[battery-panel.sh]: battery-panel.sh
+[cleaner-panel.sh]: cleaner-panel.sh
+[cpu-panel.sh]: cpu-panel.sh
+[datetime-panel.sh]: datetime-panel.sh
+[die-panel.sh]: die-panel.sh
+[eject-panel.sh]: eject-panel.sh
+[kernel-panel.sh]: kernel-panel.sh
+[memory-panel.sh]: memory-panel.sh
+[pacman-panel.sh]: pacman-panel.sh
+[power-panel.sh]: power-panel.sh
 [preview-panel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/preview-panel.png "xfce4-panel"
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery.gif "battery"
 [battery-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-tooltip.gif "battery-tooltip"
@@ -68,3 +79,16 @@ This project is licensed under GPL(v3) or later.
 [pacman-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
 [power]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power.png "power"
 [power-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power-gui.png "power-gui"
+
+
+
+
+
+
+
+
+
+
+
+
+
