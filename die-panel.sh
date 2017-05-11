@@ -7,7 +7,7 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Optional icon to display before the text
 # Insert the absolute path of the icon
 # Recommended size is 24x24 px
-declare -ra ICON_ARRAY=(
+declare -r ICON_ARRAY=(
   "${DIR}/icons/others/dice-1.png"
   "${DIR}/icons/others/dice-2.png"
   "${DIR}/icons/others/dice-3.png"

@@ -4,7 +4,7 @@
 
 > Beautify your XFCE panel by addding these awesome scripts in xfce4-genmon-plugin wrappers.
 
-#### Features
+#### Preview
 
 | Filename            | Preview     | Tooltip Preview    | On Click Action               |
 |:-------------------:|:-----------:|:------------------:|:-----------------------------:|

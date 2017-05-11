@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# Dependencies: coreutils, gawk, gksu, util-linux, zenity
+# Dependencies: coreutils, gawk, gksu, udisks2, util-linux, zenity
 
-declare DRIVES_ARRAY=($(df --sync --output=source | awk '/^\/dev\//{print $1}' | sort -V))
-declare FSTYPE_ARRAY=($(df --sync --output=source,fstype | sort -V | awk '/^\/dev\//{print $2}'))
-declare MNTPOINT_ARRAY=($(df --sync --output=source,target | sort -V | awk '/^\/dev\//{print $2}'))
+declare -r DRIVES_ARRAY=($(df --sync --output=source | awk '/^\/dev\//{print $1}' | sort -V))
+declare -r FSTYPE_ARRAY=($(df --sync --output=source,fstype | sort -V | awk '/^\/dev\//{print $2}'))
+declare -r MNTPOINT_ARRAY=($(df --sync --output=source,target | sort -V | awk '/^\/dev\//{print $2}'))
 declare TO_BE_MOUNTED_ARRAY
 
 # zenity GUI
-CHOICES=$(zenity --list --width 512 --height 256 \
+readonly CHOICES=$(zenity --list --width 512 --height 256 \
   --checklist --column "Unmount" --column "Source" --column "Filesystem" \
   --column "Mountpoint" \
   $(for ITEM in "${!DRIVES_ARRAY[@]}"; do \

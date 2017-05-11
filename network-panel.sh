@@ -20,11 +20,11 @@ test -d "/sys/class/net/${INTERFACE:-qwerty}" || \
     echo "<tool>No statistics for ${INTERFACE}</tool>" || \
       exit
 
-PRX=$(awk '{print $0}' /sys/class/net/${INTERFACE}/statistics/rx_bytes)
-PTX=$(awk '{print $0}' /sys/class/net/${INTERFACE}/statistics/tx_bytes)
+PRX=$(awk '{print $0}' "/sys/class/net/${INTERFACE}/statistics/rx_bytes")
+PTX=$(awk '{print $0}' "/sys/class/net/${INTERFACE}/statistics/tx_bytes")
 sleep 1
-CRX=$(awk '{print $0}' /sys/class/net/${INTERFACE}/statistics/rx_bytes)
-CTX=$(awk '{print $0}' /sys/class/net/${INTERFACE}/statistics/tx_bytes)
+CRX=$(awk '{print $0}' "/sys/class/net/${INTERFACE}/statistics/rx_bytes")
+CTX=$(awk '{print $0}' "/sys/class/net/${INTERFACE}/statistics/tx_bytes")
 
 BRX=$(( CRX - PRX ))
 BTX=$(( CTX - PTX ))
