@@ -61,7 +61,7 @@ function to_human_readable_output () {
   local BANDWIDTH="${1}"
 	local P=0
   
-	while [[ $(echo "${BANDWIDTH}" '>' 768 | bc -l) -eq 1 ]]; do
+	while [[ $(echo "${BANDWIDTH}" '>' 1024 | bc -l) -eq 1 ]]; do
 		BANDWIDTH=$(awk '{$1 = $1 / 1024; printf "%.2f", $1}' <<< "${BANDWIDTH}")
 		P=$(( P + 1 ))
 	done
