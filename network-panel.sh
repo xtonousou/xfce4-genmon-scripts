@@ -9,10 +9,25 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Recommended size is 24x24 px
 readonly ICON="${DIR}/icons/network/web.png"
 
-# Declaring interfaces
-declare -r ACTIVE_INTERFACES_ARRAY=($(ship -i))
-# can be replaced manually (recommended) e.g. INTERFACE="eth0"
-readonly INTERFACE=$(ship -i | awk '{print $1}') # <-------------------
+# You can pass the desired network interface on the command
+# On the generic monitor properties
+# e.g. /path/to/network-panel.sh eth0
+if [ ! -z "${1}" ]; then
+  if ship --all-interfaces | grep -w "${1}" &> /dev/null; then
+    readonly INTERFACE="${1}"
+  fi
+else
+  # Handle 'no active interfaces at all' case
+  if [[ $(ship --interfaces | awk '{print $1}') = "" ]]; then
+    # Fallback option - No argument - No active network interface
+    # Assign the second available network interface (first is loopback)
+    readonly INTERFACE=$(ship --all-interfaces | awk '{print $2}')
+  else
+    # Fallback option - No argument
+    # Default value is the first available active network interface
+    readonly INTERFACE=$(ship --interfaces | awk '{print $1}')
+  fi
+fi
 
 # Handle missing, unknown network interfaces
 test -d "/sys/class/net/${INTERFACE:-qwerty}" || \
@@ -34,19 +49,21 @@ function to_human_readable_output () {
   local BANDWIDTH="${1}"
 	local P=0
   
-	while [ "${BANDWIDTH}" -gt 1024 -a "${P}" -le 3 ]; do
-		BANDWIDTH=$(( BANDWIDTH / 1024 ))
+	while [[ $(echo "${BANDWIDTH}" '>' 768 | bc -l) -eq 1 ]]; do
+		BANDWIDTH=$(awk '{$1 = $1 / 1024; printf "%.2f", $1}' <<< "${BANDWIDTH}")
 		P=$(( P + 1 ))
 	done
   
 	case "${P}" in
 		0) BANDWIDTH="${BANDWIDTH} B/s" ;;
 		1) BANDWIDTH="${BANDWIDTH} KB/s" ;;
-		#2) BANDWIDTH="${BANDWIDTH} MB/s" ;; # ghosting (because of the BASH maths)
-		#3) BANDWIDTH="${BANDWIDTH} GB/s" ;; # ghosting (because of the BASH maths)
+		2) BANDWIDTH="${BANDWIDTH} MB/s" ;;
+		3) BANDWIDTH="${BANDWIDTH} GB/s" ;;
 	esac
   
 	echo "${BANDWIDTH}"
+
+  return 0
 }
 
 RX=$(to_human_readable_output ${BRX})
@@ -59,7 +76,7 @@ if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
 else
   INFO="<txt>"
 fi
-INFO+="↑ ${RX} ↓ ${TX}"
+INFO+="↓ ${RX} ↑ ${TX}"
 INFO+="</txt>"
 
 # Tooltip

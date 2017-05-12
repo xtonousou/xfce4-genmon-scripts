@@ -7,6 +7,7 @@ declare -r MNTPOINT_ARRAY=($(df --sync --output=source,target | sort -V | awk '/
 declare TO_BE_MOUNTED_ARRAY
 
 # zenity GUI
+#shellcheck disable=2046
 readonly CHOICES=$(zenity --list --width 512 --height 256 \
   --checklist --column "Unmount" --column "Source" --column "Filesystem" \
   --column "Mountpoint" \
