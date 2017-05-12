@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: bash>=3.2, coreutils, file, gawk, ship>=2.6 (see https://github.com/xtonousou/shIP)
+# Dependencies: bash>=3.2, bc, coreutils, file, gawk, ship>=2.6 (see https://github.com/xtonousou/shIP)
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
