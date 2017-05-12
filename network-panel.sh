@@ -9,6 +9,9 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Recommended size is 24x24 px
 readonly ICON="${DIR}/icons/network/web.png"
 
+# Displays all active network interfaces with their IPv4 addresses (local)
+readonly TOOLTIP=$(ship --ipv4)
+
 # You can pass the desired network interface on the command
 # On the generic monitor properties
 # e.g. /path/to/network-panel.sh eth0
@@ -88,12 +91,14 @@ if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
 else
   INFO="<txt>"
 fi
-INFO+="↓ ${RX} ↑ ${TX}"
+INFO+="↓<span weight='Bold' fgcolor='Red'> ${RX}</span>"
+INFO+=" "
+INFO+="↑<span weight='Bold' fgcolor='Green'> ${TX}</span>"
 INFO+="</txt>"
 
 # Tooltip
 MORE_INFO="<tool>"
-MORE_INFO+="${INTERFACE}"
+MORE_INFO+="${TOOLTIP}"
 MORE_INFO+="</tool>"
 
 # Panel Print
