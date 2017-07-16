@@ -44,10 +44,16 @@ else
   fi
 fi
 
+# Handle offline user's state
+ip route | grep ^default &>/dev/null || \
+  echo -ne "<txt>Disconnected</txt>" || \
+    echo -ne "<tool>Disconnected</tool>" || \
+      exit
+
 # Handle missing, unknown network interfaces
 test -d "/sys/class/net/${INTERFACE:-qwerty}" || \
-  echo "<txt>No ${INTERFACE}</txt>" || \
-    echo "<tool>No statistics for ${INTERFACE}</tool>" || \
+  echo -ne "<txt>Invalid ${INTERFACE}</txt>" || \
+    echo -ne "<tool>No statistics for ${INTERFACE}</tool>" || \
       exit
 
 PRX=$(awk '{print $0}' "/sys/class/net/${INTERFACE}/statistics/rx_bytes")
@@ -62,22 +68,22 @@ BTX=$(( CTX - PTX ))
 function to_human_readable_output () {
   
   local BANDWIDTH="${1}"
-	local P=0
+  local P=0
   
-	while [[ $(echo "${BANDWIDTH}" '>' 1024 | bc -l) -eq 1 ]]; do
-		BANDWIDTH=$(awk '{$1 = $1 / 1024; printf "%.2f", $1}' <<< "${BANDWIDTH}")
-		P=$(( P + 1 ))
-	done
+  while [[ $(echo "${BANDWIDTH}" '>' 1024 | bc -l) -eq 1 ]]; do
+    BANDWIDTH=$(awk '{$1 = $1 / 1024; printf "%.2f", $1}' <<< "${BANDWIDTH}")
+    P=$(( P + 1 ))
+  done
   
-	case "${P}" in
-		0) BANDWIDTH="${BANDWIDTH} B/s" ;;
-		1) BANDWIDTH="${BANDWIDTH} KB/s" ;;
-		2) BANDWIDTH="${BANDWIDTH} MB/s" ;;
-		3) BANDWIDTH="${BANDWIDTH} GB/s" ;;
-	esac
+  case "${P}" in
+    0) BANDWIDTH="${BANDWIDTH} B/s" ;;
+    1) BANDWIDTH="${BANDWIDTH} KB/s" ;;
+    2) BANDWIDTH="${BANDWIDTH} MB/s" ;;
+    3) BANDWIDTH="${BANDWIDTH} GB/s" ;;
+  esac
   
-	echo "${BANDWIDTH}"
-
+  echo -e "${BANDWIDTH}"
+  
   return 0
 }
 

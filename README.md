@@ -19,6 +19,7 @@
 | [network-panel.sh]  | ![network]  | [network-tooltip]  |                               |
 | [pacman-panel.sh]   | ![pacman]   | [pacman-tooltip]   |                               |
 | [power-panel.sh]    | ![power]    |                    | [power-gui]                   |
+| [spotify-panel.sh]  | ![spotify]  | [spotify-tooltip]  | Gain focus on spotify window  |
 
 ##### Recommended Properties
 
@@ -37,6 +38,7 @@ To get started, you need a horizontal xfce4-panel with **28p** row size and **10
 | /path/to/network-panel.sh  | **xos4 Terminus Bold 18** |  **2.25**  |
 | /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/spotify-panel.sh  | **xos4 Terminus Bold 18** |  **1.00**  |
 
 #### Compatibility
 
@@ -58,6 +60,7 @@ This project is licensed under GPL(v3) or later.
 [network-panel.sh]: network-panel.sh
 [pacman-panel.sh]: pacman-panel.sh
 [power-panel.sh]: power-panel.sh
+[spotify-panel.sh]: spotify-panel.sh
 
 <!--- Pics -->
 [preview-panel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/preview-panel.png "xfce4-panel"
@@ -86,6 +89,8 @@ This project is licensed under GPL(v3) or later.
 [pacman-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
 [power]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power.png "power"
 [power-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power-gui.png "power-gui"
+[spotify]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify.png "spotify"
+[spotify-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify-tooltip.png "spotify-tooltip"
 
 
 
