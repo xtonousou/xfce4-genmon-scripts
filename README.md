@@ -89,7 +89,7 @@ This project is licensed under GPL(v3) or later.
 [pacman-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
 [power]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power.png "power"
 [power-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power-gui.png "power-gui"
-[spotify]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify.png "spotify"
+[spotify]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify.gif "spotify"
 [spotify-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify-tooltip.png "spotify-tooltip"
 
 
