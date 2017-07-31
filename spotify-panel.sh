@@ -14,8 +14,15 @@ if pidof spotify &> /dev/null; then
   readonly ARTIST=$(bash "${DIR}/spotify.sh" artist)
   readonly TITLE=$(bash "${DIR}/spotify.sh" title)
   readonly ALBUM=$(bash "${DIR}/spotify.sh" album)
-  readonly ARTIST_TITLE=$(echo "${ARTIST} - ${TITLE}")
   readonly WINDOW_ID=$(wmctrl -l | grep "${ARTIST_TITLE}" | awk '{print $1}')
+  ARTIST_TITLE=$(echo "${ARTIST} - ${TITLE}")
+
+  # Proper length handling
+  readonly MAX_CHARS=52
+  readonly STRING_LENGTH="${#ARTIST_TITLE}"
+  readonly CHARS_TO_REMOVE=$(( STRING_LENGTH - MAX_CHARS ))
+  [ "${#ARTIST_TITLE}" -gt "${MAX_CHARS}" ] \
+    && ARTIST_TITLE="${ARTIST_TITLE:0:-CHARS_TO_REMOVE} …"
 
   # Panel
   if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
