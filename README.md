@@ -40,9 +40,19 @@ To get started, you need a horizontal xfce4-panel with **28p** row size and **10
 | /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/spotify-panel.sh  | **xos4 Terminus Bold 18** |  **1.00**  |
 
-#### Compatibility
+#### Requirements
 
 You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements are mentioned inside the scripts.
+
+#### Installation
+
+Clone the project `git clone --depth 1 https://github.com/xtonousou/xfce4-genmon-scripts.git`.
+
+Add one **Generic Monitor** for each widget and place it wherever you want.
+
+Finally, edit its properties and add `bash /full/path/to/widget-panel.sh`. For suggested period(s) and fonts, refer to "Recommended Properties"
+
+*TIP: Monitor the CPU and Memory usage of its widget (Generic Monitor) and adjust its properties (increase period)*
 
 #### License
 
@@ -91,16 +101,3 @@ This project is licensed under GPL(v3) or later.
 [power-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power-gui.png "power-gui"
 [spotify]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify.gif "spotify"
 [spotify-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify-tooltip.png "spotify-tooltip"
-
-
-
-
-
-
-
-
-
-
-
-
-
