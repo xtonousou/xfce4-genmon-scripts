@@ -11,9 +11,9 @@ readonly ICON="${DIR}/icons/music/spotify.png"
 
 if pidof spotify &> /dev/null; then
   # Spotify song's info
-  readonly ARTIST=$(bash "${DIR}/spotify.sh" artist)
-  readonly TITLE=$(bash "${DIR}/spotify.sh" title)
-  readonly ALBUM=$(bash "${DIR}/spotify.sh" album)
+  readonly ARTIST=$(bash "${DIR}/spotify.sh" artist | sed 's/&/&#38;/g')
+  readonly TITLE=$(bash "${DIR}/spotify.sh" title | sed 's/&/&#38;/g')
+  readonly ALBUM=$(bash "${DIR}/spotify.sh" album | sed 's/&/&#38;/g')
   readonly WINDOW_ID=$(wmctrl -l | grep "${ARTIST_TITLE}" | awk '{print $1}')
   ARTIST_TITLE=$(echo "${ARTIST} - ${TITLE}")
 
