@@ -6,43 +6,59 @@
 
 #### Preview
 
-| Filename            | Preview     | Tooltip Preview    | On Click Action               |
-|:-------------------:|:-----------:|:------------------:|:-----------------------------:|
-| [battery-panel.sh]  | ![battery]  | [battery-tooltip]  | [battery-gui]                 |
-| [cleaner-panel.sh]  | ![cleaner]  |                    | [cleaner-gui] [cleaner-gui-2] |
-| [cpu-panel.sh]      | ![cpu]      | [cpu-tooltip]      | [cpu-gui]                     |
-| [datetime-panel.sh] | ![datetime] | [datetime-tooltip] |                               |
-| [die-panel.sh]      | ![die]      |                    |                               |
-| [eject-panel.sh]    | ![eject]    |                    | [eject-gui]                   |
-| [kernel-panel.sh]   | ![kernel]   | [kernel-tooltip]   |                               |
-| [memory-panel.sh]   | ![memory]   | [memory-tooltip]   | [memory-gui]                  |
-| [network-panel.sh]  | ![network]  | [network-tooltip]  |                               |
-| [pacman-panel.sh]   | ![pacman]   | [pacman-tooltip]   |                               |
-| [power-panel.sh]    | ![power]    |                    | [power-gui]                   |
-| [spotify-panel.sh]  | ![spotify]  | [spotify-tooltip]  | Gain focus on spotify window  |
+| Filename                         | Preview      | Tooltip Preview    | On Click Action               |
+|:--------------------------------:|:------------:|:------------------:|:-----------------------------:|
+| [smawrt-watch-battery-panel.sh]  | ![swbattery] |                    |                               |
+| [battery-panel.sh]               | ![battery]   | [battery-tooltip]  | [battery-gui]                 |
+| [cleaner-panel.sh]               | ![cleaner]   |                    | [cleaner-gui] [cleaner-gui-2] |
+| [cpu-panel.sh]                   | ![cpu]       | [cpu-tooltip]      | [cpu-gui]                     |
+| [datetime-panel.sh]              | ![datetime]  | [datetime-tooltip] |                               |
+| [die-panel.sh]                   | ![die]       |                    |                               |
+| [eject-panel.sh]                 | ![eject]     |                    | [eject-gui]                   |
+| [kernel-panel.sh]                | ![kernel]    | [kernel-tooltip]   |                               |
+| [memory-panel.sh]                | ![memory]    | [memory-tooltip]   | [memory-gui]                  |
+| [network-panel.sh]               | ![network]   | [network-tooltip]  |                               |
+| [pacman-panel.sh]                | ![pacman]    | [pacman-tooltip]   |                               |
+| [power-panel.sh]                 | ![power]     |                    | [power-gui]                   |
+| [spotify-panel.sh]               | ![spotify]   | [spotify-tooltip]  | Gain focus on spotify window  |
 
 ##### Recommended Properties
 
 To get started, you need a horizontal xfce4-panel with **28p** row size and **100%** length (recommended, suits better).
 
-| Command                    | Font                      | Period (s) |
-|---------------------------:|:-------------------------:|:----------:|
-| /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**  |
-| /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**  |
-| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**  |
-| /path/to/datetime-panel.sh | **xos4 Terminus Bold 18** |  **1.00**  |
-| /path/to/die-panel.sh      | **xos4 Terminus Bold 18** |  **2.75**  |
-| /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
-| /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
-| /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**  |
-| /path/to/network-panel.sh  | **xos4 Terminus Bold 18** |  **2.25**  |
-| /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
-| /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
-| /path/to/spotify-panel.sh  | **xos4 Terminus Bold 18** |  **1.00**  |
+| Command                                | Font                      | Period (s) |
+|---------------------------------------:|:-------------------------:|:----------:|
+| /path/to/smart-watch-battery-panel.sh  | **xos4 Terminus Bold 18** |  **30**    |
+| /path/to/battery-panel.sh              | **xos4 Terminus Bold 18** |  **1.75**  |
+| /path/to/cleaner-panel.sh              | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/cpu-panel.sh                  | **xos4 Terminus Bold 18** |  **1.50**  |
+| /path/to/datetime-panel.sh             | **xos4 Terminus Bold 18** |  **1.00**  |
+| /path/to/die-panel.sh                  | **xos4 Terminus Bold 18** |  **2.75**  |
+| /path/to/eject-panel.sh                | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/kernel-panel.sh               | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/memory-panel.sh               | **xos4 Terminus Bold 18** |  **1.00**  |
+| /path/to/network-panel.sh              | **xos4 Terminus Bold 18** |  **2.25**  |
+| /path/to/pacman-panel.sh               | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/power-panel.sh                | **xos4 Terminus Bold 18** |  **3600**  |
+| /path/to/spotify-panel.sh              | **xos4 Terminus Bold 18** |  **1.00**  |
 
 #### Requirements
 
 You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements are mentioned inside the scripts.
+
+#### Workarounds
+
+##### Smart Watch Battery Panel
+
+In order to use `smart-watch-battery-panel.sh` you need to use a crontab or a systemd timer to generate the required information.
+
+```bash
+crontab -e
+* * * * * /usr/bin/env bash /path/to/xfce4-genmon-scripts/adb-info.sh $(arp -e -n | awk "/98:28:a6:dd:00:8c/{print \$1}") battery ticwatch
+```
+
+1. Replace the MAC address with the correct one. Hint: Use `arp -n -a` to get the MAC address.
+2. Replace the 3rd argument **ticwatch**, with a unique name that describes your device.
 
 #### Installation
 
@@ -59,6 +75,7 @@ Finally, edit its properties and add `bash /full/path/to/widget-panel.sh`. For s
 This project is licensed under GPL(v3) or later.
 
 <!--- Script Paths -->
+[smart-watch-battery-panel.sh]: smart-watch-battery-panel.sh
 [battery-panel.sh]: battery-panel.sh
 [cleaner-panel.sh]: cleaner-panel.sh
 [cpu-panel.sh]: cpu-panel.sh
@@ -74,6 +91,7 @@ This project is licensed under GPL(v3) or later.
 
 <!--- Pics -->
 [preview-panel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/preview-panel.png "xfce4-panel"
+[swbattery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/smart-watch-battery-panel/swbattery.png "smart watch battery"
 [battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery.gif "battery"
 [battery-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-tooltip.gif "battery-tooltip"
 [battery-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-gui.png "battery-gui"
