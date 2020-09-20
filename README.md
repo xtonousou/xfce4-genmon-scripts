@@ -8,7 +8,7 @@
 
 | Filename                         | Preview      | Tooltip Preview    | On Click Action               |
 |:--------------------------------:|:------------:|:------------------:|:-----------------------------:|
-| [smawrt-watch-battery-panel.sh]  | ![swbattery] |                    |                               |
+| [smart-watch-battery-panel.sh]  | ![swbattery] |                    |                               |
 | [battery-panel.sh]               | ![battery]   | [battery-tooltip]  | [battery-gui]                 |
 | [cleaner-panel.sh]               | ![cleaner]   |                    | [cleaner-gui] [cleaner-gui-2] |
 | [cpu-panel.sh]                   | ![cpu]       | [cpu-tooltip]      | [cpu-gui]                     |
