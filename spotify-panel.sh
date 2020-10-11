@@ -30,7 +30,7 @@ if pidof spotify &> /dev/null; then
     INFO+="<txt>"
     INFO+="${ARTIST_TITLE}"
     INFO+="</txt>"
-  else 
+  else
     INFO="<txt>"
     INFO+="${ARTIST_TITLE}"
     INFO+="</txt>"
@@ -51,7 +51,7 @@ else
     INFO+="<txt>"
     INFO+="Offline"
     INFO+="</txt>"
-  else 
+  else
     INFO="<txt>"
     INFO+="Offline"
     INFO+="</txt>"
