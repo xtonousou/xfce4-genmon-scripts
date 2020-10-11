@@ -70,6 +70,13 @@ Finally, edit its properties and add `bash /full/path/to/widget-panel.sh`. For s
 
 *TIP: Monitor the CPU and Memory usage of its widget (Generic Monitor) and adjust its properties (increase period)*
 
+#### Icons
+
+The icons that are packaged with this software are part of the [MaterialDesign](https://github.com/templarian/MaterialDesign) project.
+These icons are provided **as-is** without any change.
+
+Please refer [here](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE) for the respective license.
+
 #### License
 
 This project is licensed under GPL(v3) or later.
