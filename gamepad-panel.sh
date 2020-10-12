@@ -28,17 +28,18 @@ MORE_INFO="<tool>"
 for GAMEPAD in $(find /sys/class/power_supply/*_controller_battery_* 2>/dev/null); do
     if [[ -n "${NAME}" ]]; then
         if grep -q "${NAME}" <<< "${GAMEPAD}" &>/dev/null; then
-            INFO+="$(awk -F'=' '/POWER_SUPPLY_CAPACITY/{print $2}' "${GAMEPAD}/uevent")%"
+            INFO+="$(awk -F'=' '/POWER_SUPPLY_CAPACITY/{print $2}' "${GAMEPAD}/uevent")% "
         fi
         unset NAME
     else
-        INFO+="$(awk -F'=' '/POWER_SUPPLY_CAPACITY/{print $2}' "${GAMEPAD}/uevent")%"
+        INFO+="$(awk -F'=' '/POWER_SUPPLY_CAPACITY/{print $2}' "${GAMEPAD}/uevent")% "
     fi
 
     MORE_INFO+="Gamepad: $(awk -F'=' '/POWER_SUPPLY_NAME/{print $2}' "${GAMEPAD}/uevent")\n"
     MORE_INFO+="Battery: $(awk -F'=' '/POWER_SUPPLY_CAPACITY/{print $2}' "${GAMEPAD}/uevent")%\n"
 done
 
+INFO="${INFO## }"  # remove trailing spaces
 INFO+="</txt>"
 MORE_INFO+="</tool>"
 
