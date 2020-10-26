@@ -10,8 +10,8 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly ICON="${DIR}/icons/package-manager/pacman.png"
 
 # Calculate updates
-readonly AUR=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
-readonly OFFICIAL=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
+readonly AUR=$((yay -Qua 2>/dev/null || auracle sync 2>/dev/null || auracle outdated 2>/dev/null || yaourt -Qua 2>/dev/null) | wc -l)
+readonly OFFICIAL=$(checkupdates | wc -l)
 readonly ALL=$(( AUR + OFFICIAL ))
 
 # Panel
