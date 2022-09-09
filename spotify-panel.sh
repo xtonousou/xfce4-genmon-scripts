@@ -49,11 +49,9 @@ else
   if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
     INFO="<img>${ICON}</img>"
     INFO+="<txt>"
-    INFO+="Offline"
     INFO+="</txt>"
   else
     INFO="<txt>"
-    INFO+="Offline"
     INFO+="</txt>"
   fi
 

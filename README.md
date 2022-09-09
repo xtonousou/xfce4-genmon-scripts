@@ -8,12 +8,13 @@
 
 | Filename                         | Preview      | Tooltip Preview    | On Click Action               |
 |:--------------------------------:|:------------:|:------------------:|:-----------------------------:|
-| [smart-watch-battery-panel.sh]  | ![swbattery] |                    |                               |
+| [smart-watch-battery-panel.sh]   | ![swbattery] |                    |                               |
 | [battery-panel.sh]               | ![battery]   | [battery-tooltip]  | [battery-gui]                 |
 | [cleaner-panel.sh]               | ![cleaner]   |                    | [cleaner-gui] [cleaner-gui-2] |
 | [cpu-panel.sh]                   | ![cpu]       | [cpu-tooltip]      | [cpu-gui]                     |
 | [datetime-panel.sh]              | ![datetime]  | [datetime-tooltip] |                               |
 | [die-panel.sh]                   | ![die]       |                    |                               |
+| [disk-panel.sh]                  | ![disk]      | [disk-tooltip]     |                               |
 | [eject-panel.sh]                 | ![eject]     |                    | [eject-gui]                   |
 | [kernel-panel.sh]                | ![kernel]    | [kernel-tooltip]   |                               |
 | [memory-panel.sh]                | ![memory]    | [memory-tooltip]   | [memory-gui]                  |
@@ -34,6 +35,7 @@ To get started, you need a horizontal xfce4-panel with **28p** row size and **10
 | /path/to/cpu-panel.sh                  | **xos4 Terminus Bold 18** |  **1.50**  |
 | /path/to/datetime-panel.sh             | **xos4 Terminus Bold 18** |  **1.00**  |
 | /path/to/die-panel.sh                  | **xos4 Terminus Bold 18** |  **2.75**  |
+| /path/to/disk-panel.sh                 | **xos4 Terminus Bold 18** |  **5.00**  |
 | /path/to/eject-panel.sh                | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/kernel-panel.sh               | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/memory-panel.sh               | **xos4 Terminus Bold 18** |  **1.00**  |
@@ -45,20 +47,6 @@ To get started, you need a horizontal xfce4-panel with **28p** row size and **10
 #### Requirements
 
 You just need `xfce4-panel` and `xfce4-genmon-plugin`. Additional requirements are mentioned inside the scripts.
-
-#### Workarounds
-
-##### Smart Watch Battery Panel
-
-In order to use `smart-watch-battery-panel.sh` you need to use a crontab or a systemd timer to generate the required information.
-
-```bash
-crontab -e
-* * * * * /usr/bin/env bash /path/to/xfce4-genmon-scripts/adb-info.sh $(arp -e -n | awk "/98:28:a6:dd:00:8c/{print \$1}") battery ticwatch
-```
-
-1. Replace the MAC address with the correct one. Hint: Use `arp -n -a` to get the MAC address.
-2. Replace the 3rd argument **ticwatch**, with a unique name that describes your device.
 
 #### Installation
 
@@ -77,6 +65,20 @@ These icons are provided **as-is** without any change.
 
 Please refer [here](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE) for the respective license.
 
+#### Workarounds
+
+##### Smart Watch Battery Panel
+
+In order to use `smart-watch-battery-panel.sh` you need to use a crontab or a systemd timer to generate the required information.
+
+```bash
+crontab -e
+* * * * * /usr/bin/env bash /path/to/xfce4-genmon-scripts/adb-info.sh $(arp -e -n | awk "/98:28:a6:dd:00:8c/{print \$1}") battery ticwatch
+```
+
+1. Replace the MAC address with the correct one. Hint: Use `arp -n -a` to get the MAC address.
+2. Replace the 3rd argument **ticwatch**, with a unique name that describes your device.
+
 #### License
 
 This project is licensed under GPL(v3) or later.
@@ -88,6 +90,7 @@ This project is licensed under GPL(v3) or later.
 [cpu-panel.sh]: cpu-panel.sh
 [datetime-panel.sh]: datetime-panel.sh
 [die-panel.sh]: die-panel.sh
+[disk-panel.sh]: disk-panel.sh
 [eject-panel.sh]: eject-panel.sh
 [kernel-panel.sh]: kernel-panel.sh
 [memory-panel.sh]: memory-panel.sh
@@ -97,32 +100,34 @@ This project is licensed under GPL(v3) or later.
 [spotify-panel.sh]: spotify-panel.sh
 
 <!--- Pics -->
-[preview-panel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/preview-panel.png "xfce4-panel"
-[swbattery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/smart-watch-battery-panel/swbattery.png "smart watch battery"
-[battery]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery.gif "battery"
-[battery-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-tooltip.gif "battery-tooltip"
-[battery-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/battery-panel/battery-gui.png "battery-gui"
-[cleaner]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cleaner-panel/cleaner.png "cleaner"
-[cleaner-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cleaner-panel/cleaner-gui.png "cleaner-gui"
-[cleaner-gui-2]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cleaner-panel/cleaner-gui-2.png "cleaner-gui-2"
-[cpu]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cpu-panel/cpu.gif "cpu"
-[cpu-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cpu-panel/cpu-tooltip.gif "cpu-tooltip"
-[cpu-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cpu-panel/cpu-gui.png "cpu-gui"
-[datetime]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/datetime-panel/datetime.gif "datetime"
-[datetime-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/datetime-panel/datetime-tooltip.png "datetime-tooltip"
-[die]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/die-panel/die.gif "die"
-[eject]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/eject-panel/eject.png "eject"
-[eject-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/eject-panel/eject-gui.png "eject-gui"
-[kernel]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/kernel-panel/kernel.png "kernel"
-[kernel-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/kernel-panel/kernel-tooltip.png "kernel-tooltip"
-[memory]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/memory-panel/memory.gif "memory"
-[memory-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/memory-panel/memory-tooltip.gif "memory-tooltip"
-[memory-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/memory-panel/memory-gui.png "memory-gui"
-[network]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/network-panel/network.gif "network"
-[network-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/network-panel/network-tooltip.png "network-tooltip"
-[pacman]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman.png "pacman"
-[pacman-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
-[power]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power.png "power"
-[power-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power-gui.png "power-gui"
-[spotify]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify.gif "spotify"
-[spotify-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/spotify-panel/spotify-tooltip.png "spotify-tooltip"
+[preview-panel]: previews/preview-panel.png "xfce4-panel"
+[swbattery]: previews/smart-watch-battery-panel/swbattery.png "smart watch battery"
+[battery]: previews/battery-panel/battery.gif "battery"
+[battery-tooltip]: previews/battery-panel/battery-tooltip.gif "battery-tooltip"
+[battery-gui]: previews/battery-panel/battery-gui.png "battery-gui"
+[cleaner]: previews/cleaner-panel/cleaner.png "cleaner"
+[cleaner-gui]: previews/cleaner-panel/cleaner-gui.png "cleaner-gui"
+[cleaner-gui-2]: previews/cleaner-panel/cleaner-gui-2.png "cleaner-gui-2"
+[cpu]: previews/cpu-panel/cpu.gif "cpu"
+[cpu-tooltip]: previews/cpu-panel/cpu-tooltip.gif "cpu-tooltip"
+[cpu-gui]: previews/cpu-panel/cpu-gui.png "cpu-gui"
+[datetime]: previews/datetime-panel/datetime.gif "datetime"
+[datetime-tooltip]: previews/datetime-panel/datetime-tooltip.png "datetime-tooltip"
+[die]: previews/die-panel/die.gif "die"
+[disk]: previews/disk-panel/disk.png "disk"
+[disk-tooltip]: previews/disk-panel/disk-tooltip.png "disk-tooltip"
+[eject]: previews/eject-panel/eject.png "eject"
+[eject-gui]: previews/eject-panel/eject-gui.png "eject-gui"
+[kernel]: previews/kernel-panel/kernel.png "kernel"
+[kernel-tooltip]: previews/kernel-panel/kernel-tooltip.png "kernel-tooltip"
+[memory]: previews/memory-panel/memory.gif "memory"
+[memory-tooltip]: previews/memory-panel/memory-tooltip.gif "memory-tooltip"
+[memory-gui]: previews/memory-panel/memory-gui.png "memory-gui"
+[network]: previews/network-panel/network.gif "network"
+[network-tooltip]: previews/network-panel/network-tooltip.png "network-tooltip"
+[pacman]: previews/pacman-panel/pacman.png "pacman"
+[pacman-tooltip]: previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
+[power]: previews/power-panel/power.png "power"
+[power-gui]: previews/power-panel/power-gui.png "power-gui"
+[spotify]: previews/spotify-panel/spotify.gif "spotify"
+[spotify-tooltip]: previews/spotify-panel/spotify-tooltip.png "spotify-tooltip"

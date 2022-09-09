@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: bash>=3.2, bc, coreutils, file, gawk, ship>=2.6 (see https://github.com/xtonousou/shIP)
+# Dependencies: bash>=3.2, bc, coreutils, file, gawk, tr, ss
 
 # Makes the script more portable
 readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -9,8 +9,8 @@ readonly DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Recommended size is 24x24 px
 readonly ICON="${DIR}/icons/network/web.png"
 
-# Displays all active network interfaces with their IPv4 addresses (local)
-readonly TOOLTIP=$(ship --ipv4)
+# Displays summary of tcp and udp connections
+readonly TOOLTIP=$(ss -s | head -n 3 | grep -Ev "^$")
 
 # You can pass the desired network interface on the command
 # On the generic monitor properties
