@@ -14,7 +14,6 @@ if pidof spotify &> /dev/null; then
   readonly ARTIST=$(bash "${DIR}/spotify.sh" artist | sed 's/&/&#38;/g')
   readonly TITLE=$(bash "${DIR}/spotify.sh" title | sed 's/&/&#38;/g')
   readonly ALBUM=$(bash "${DIR}/spotify.sh" album | sed 's/&/&#38;/g')
-  readonly WINDOW_ID=$(wmctrl -l | grep "${ARTIST_TITLE}" | awk '{print $1}')
   ARTIST_TITLE=$(echo "${ARTIST} - ${TITLE}")
 
   # Proper length handling
@@ -36,7 +35,7 @@ if pidof spotify &> /dev/null; then
     INFO+="</txt>"
   fi
 
-  INFO+="<click>xdotool windowactivate ${WINDOW_ID}</click>"
+  INFO+="<click>xdotool search --desktop 0 Spotify windowactivate</click>"
 
   # Tooltip
   MORE_INFO="<tool>"
